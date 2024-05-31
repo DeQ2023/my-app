@@ -1,6 +1,6 @@
 'on': push
 jobs:
-  build:
+  build-node:
     runs-on: ubuntu-latest
     container: 'node:20'
     steps:
@@ -8,4 +8,5 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v4
       - run : npm install
+      - run : npm run build -- if present
       - run : node app.js
